@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISART Artisanat — Maroquinerie &amp; artisanat marocain fait main</title>
+<meta name="description" content="WISART Artisanat, Casablanca : sacs, gilets et chaussures artisanales marocaines, tissage berbère et cuir travaillés à la main.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241C15;
+    --sand:#F4EBD8;
+    --sand-deep:#E8DAB9;
+    --clay:#AE4E2C;
+    --clay-deep:#8A3C21;
+    --gold:#B8923E;
+    --teal:#2B5F5A;
+    --henna:#7A2E28;
+    --paper:#FBF6EA;
+    --line: rgba(36,28,21,0.14);
+    --shadow: 0 18px 40px rgba(36,28,21,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--sand); color:var(--ink);
+    font-family:'Cairo', sans-serif; font-weight:400; line-height:1.6;
+  }
+  h1,h2,h3,.display{ font-family:'Amiri', serif; font-weight:700; margin:0; }
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+  .eyebrow{
+    font-family:'Cairo',sans-serif; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    font-size:.72rem; color:var(--clay-deep); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow .star{width:10px;height:10px;flex:none;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(244,235,216,0.94);
+    backdrop-filter: blur(6px); border-bottom:1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:10px 28px; max-width:1180px; margin:0 auto;}
+  .logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo img{ height:52px; width:auto; }
+  .navlinks{ display:flex; gap:32px; font-size:.92rem; font-weight:600;}
+  .navlinks a{text-decoration:none; opacity:.82; transition:opacity .2s;}
+  .navlinks a:hover{opacity:1;}
+  @media(max-width:720px){ .navlinks{display:none;} }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; padding:12px 24px; border-radius:2px;
+    font-weight:700; font-size:.85rem; letter-spacing:.02em; text-decoration:none;
+    border:1.5px solid var(--ink); cursor:pointer; transition: transform .18s ease, background .18s ease, color .18s ease;
+  }
+  .btn-solid{ background:var(--ink); color:var(--paper);}
+  .btn-solid:hover{ transform:translateY(-2px); background:var(--clay-deep); border-color:var(--clay-deep);}
+  .btn-ghost{ background:transparent; color:var(--ink);}
+  .btn-ghost:hover{ transform:translateY(-2px); background:var(--ink); color:var(--paper);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; padding:70px 28px 100px; text-align:center; overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(174,78,44,.10), transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(43,95,90,.12), transparent 45%),
+      var(--sand);
+  }
+  .hero-mark{ height:150px; width:auto; margin:0 auto 18px; }
+  .slogan{
+    font-family:'Amiri', serif; font-style:italic; font-size:clamp(1.1rem, 2.2vw, 1.5rem);
+    color:var(--teal); margin:6px auto 6px; max-width:640px;
+  }
+  .hero-desc{ max-width:620px; margin:26px auto 0; font-size:1.02rem; color:#4a4034;}
+  .cta-row{ margin-top:34px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+  /* ---------- section shells ---------- */
+  section{ padding:80px 0; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 48px;}
+  .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); margin-top:14px;}
+
+  /* ---------- marque ---------- */
+  .brand{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .brand-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center; }
+  .brand-grid h2{ font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:20px;}
+  .brand-grid p{ color:#4a4034; margin:0 0 16px; font-size:1.02rem;}
+  .brand-photo{ border-radius:6px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/5; }
+  .brand-photo img{ width:100%; height:100%; object-fit:cover; }
+  @media(max-width:860px){ .brand-grid{grid-template-columns:1fr;} .brand-photo{order:-1; aspect-ratio:16/9;} }
+
+  /* ---------- carrousel ---------- */
+  .carousel-section{ background:var(--ink); color:var(--paper); overflow:hidden;}
+  .carousel-section .section-head h2{color:var(--paper);}
+  .carousel-section .section-head p{color:#d8cdb6;}
+  .carousel{ position:relative; max-width:1180px; margin:0 auto; padding:0 28px; }
+  .track-viewport{ overflow:hidden; border-radius:6px; box-shadow:var(--shadow);}
+  .track{ display:flex; transition:transform .7s cubic-bezier(.65,0,.35,1);}
+  .slide{ min-width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; background:var(--paper); color:var(--ink);}
+  .slide-art{ background:var(--sand-deep); aspect-ratio:auto; }
+  .slide-art img{ width:100%; height:100%; object-fit:cover; }
+  .slide-info{ padding:48px 56px; display:flex; flex-direction:column; justify-content:center;}
+  .slide-info .eyebrow{color:var(--clay-deep);}
+  .slide-info h3{ font-size:clamp(1.4rem,3vw,2rem); margin:14px 0 12px;}
+  .slide-info p{ color:#4a4034; margin:0 0 22px; max-width:440px;}
+  .slide-price{ font-family:'Cairo',sans-serif; font-weight:800; font-size:1.15rem; color:var(--henna);}
+  @media(max-width:760px){ .slide{grid-template-columns:1fr;} .slide-art{aspect-ratio:4/3;} .slide-info{padding:30px 28px 40px;} }
+
+  .carousel-controls{ display:flex; align-items:center; justify-content:center; gap:22px; margin-top:26px;}
+  .car-btn{
+    width:40px; height:40px; border-radius:50%; border:1px solid rgba(251,246,234,.35);
+    background:transparent; color:var(--paper); cursor:pointer; font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center; transition:.2s;
+  }
+  .car-btn:hover{ background:var(--gold); border-color:var(--gold); color:var(--ink);}
+  .dots{ display:flex; gap:9px;}
+  .dot{ width:8px; height:8px; border-radius:50%; background:rgba(251,246,234,.35); cursor:pointer; border:none; padding:0;}
+  .dot.active{ background:var(--gold); width:22px; border-radius:4px; transition:.3s;}
+
+  /* ---------- galerie ---------- */
+  .gallery-section .section-head p{color:#5a4f40;}
+  .gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; }
+  @media(max-width:900px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:600px){ .gallery-grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--paper); border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow);}
+  .card-art{ aspect-ratio:4/3; overflow:hidden; background:var(--sand-deep);}
+  .card-art img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease;}
+  .card:hover .card-art img{ transform:scale(1.05); }
+  .card-body{ padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .card-tag{ font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700;}
+  .card-body h3{ font-family:'Amiri',serif; font-size:1.2rem; font-weight:700;}
+  .card-body p{ font-size:.88rem; color:#5a4f40; margin:0; flex:1;}
+  .card-foot{ display:flex; align-items:center; justify-content:flex-end; margin-top:8px;}
+  .stamp{
+    font-family:'Cairo',sans-serif; font-weight:800; font-size:.95rem; color:var(--paper);
+    background:var(--henna); padding:7px 14px; border-radius:2px; transform:rotate(-2deg);
+    box-shadow:2px 2px 0 rgba(36,28,21,.18);
+  }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); color:#cfc3a9; padding:56px 0 30px;}
+  .foot-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px; padding-bottom:36px; border-bottom:1px solid rgba(251,246,234,.14);}
+  .foot-logo{ display:flex; align-items:center; gap:14px;}
+  .foot-logo img{ height:56px; width:auto; }
+  .foot-logo .tag{ font-size:.82rem; opacity:.75; max-width:220px;}
+  .foot-links{ display:flex; gap:48px; flex-wrap:wrap;}
+  .foot-col h5{ font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;}
+  .foot-col p, .foot-col a{ display:block; font-size:.88rem; text-decoration:none; color:#cfc3a9; margin:0 0 8px; opacity:.9;}
+  .foot-col a:hover{opacity:1;}
+  .foot-bottom{ display:flex; justify-content:space-between; padding-top:22px; font-size:.78rem; color:#8f8368; flex-wrap:wrap; gap:10px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;} .track{transition:none;} .card, .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- =============== HEADER =============== -->
+<header>
+  <div class="nav">
+    <a class="logo" href="#top"><img src="assets/logo.png" alt="WISART Artisanat"></a>
+    <nav class="navlinks">
+      <a href="#marque">La maison</a>
+      <a href="#vedettes">Sélection</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#galerie" class="btn btn-solid">Voir la collection</a>
+  </div>
+</header>
+
+<!-- =============== HERO =============== -->
+<section class="hero" id="top">
+  <img class="hero-mark" src="assets/logo.png" alt="WISART Artisanat">
+  <p class="slogan">« L'artisanat marocain, tissé à la main, réinventé avec caractère »</p>
+  <p class="hero-desc">Sacs, gilets et chaussures façonnés à Casablanca à partir de tissages berbères, de kilims et de cuir travaillé à la main. Chaque pièce WISART est unique, née de la rencontre entre maroquinerie et savoir-faire textile marocain.</p>
+  <div class="cta-row">
+    <a href="#galerie" class="btn btn-solid">Explorer la galerie</a>
+    <a href="#marque" class="btn btn-ghost">Découvrir la maison</a>
+  </div>
+</section>
+
+<!-- =============== DESCRIPTION DE LA MARQUE =============== -->
+<section class="brand" id="marque">
+  <div class="wrap brand-grid">
+    <div>
+      <div class="eyebrow"><svg class="star" viewBox="0 0 20 20" fill="var(--gold)"><path d="M10 1 L12 8 L19 8 L13 12 L15 19 L10 14 L5 19 L7 12 L1 8 L8 8 Z"/></svg>Notre maison</div>
+      <h2>Le tissage marocain revisité en pièces de maroquinerie</h2>
+      <p>WISART Artisanat marie deux savoir-faire : la maroquinerie, pour les structures, les poignées et les finitions en cuir, et le tissage traditionnel marocain — kilim, laine bouclée, broderies berbères — pour habiller chaque pièce d'un motif qui raconte une histoire.</p>
+      <p>Sacs façon Birkin ou Kelly habillés de tissus tissés à la main, gilets en laine bordés de galons brodés, mules et bottines en cuir garnies de laine bouclée : chaque article est confectionné à la main, à Casablanca, en petite série.</p>
+    </div>
+    <div class="brand-photo">
+      <img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges WISART">
+    </div>
+  </div>
+</section>
+
+<!-- =============== CARROUSEL : MEILLEURS ARTICLES =============== -->
+<section class="carousel-section" id="vedettes">
+  <div class="wrap section-head">
+    <div class="eyebrow" style="justify-content:center;color:var(--gold);"><svg class="star" viewBox="0 0 20 20" fill="var(--gold)"><path d="M10 1 L12 8 L19 8 L13 12 L15 19 L10 14 L5 19 L7 12 L1 8 L8 8 Z"/></svg>La sélection du moment</div>
+    <h2>Nos pièces phares</h2>
+    <p>Un aperçu de nos meilleures pièces, une par famille d'articles — le carrousel défile automatiquement.</p>
+  </div>
+
+  <div class="carousel">
+    <div class="track-viewport">
+      <div class="track" id="track">
+
+        <div class="slide">
+          <div class="slide-art"><img src="assets/p1-sac-birkin-regard.jpg" alt="Sac Birkin brodé motif Regard"></div>
+          <div class="slide-info">
+            <div class="eyebrow">Sac artisanal peint main</div>
+            <h3>Sac « Regard »</h3>
+            <p>Silhouette façon Birkin entièrement brodée à la main d'un visage aux grands yeux dans l'esprit de l'art populaire marocain. Anses et rabat en cuir noir, fermoir métal argenté.</p>
+            <span class="slide-price">1 350,00 dh</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-art"><img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges"></div>
+          <div class="slide-info">
+            <div class="eyebrow">Sac de voyage tissé</div>
+            <h3>Grand sac kilim à franges</h3>
+            <p>Un authentique tissage kilim rouge et noir aux motifs berbères habille ce grand sac à base cuir, franges nouées main et clous métalliques. Pièce imposante et unique.</p>
+            <span class="slide-price">2 800,00 dh</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-art"><img src="assets/p4-sac-kelly-tisse.jpg" alt="Sac Kelly tissé motif losange"></div>
+          <div class="slide-info">
+            <div class="eyebrow">Sac Kelly tissé</div>
+            <h3>Sac Kelly diamant</h3>
+            <p>Silhouette Kelly en tissage bouclé à motif losange, rabat et poignée en cuir cognac, fermoir métallique. La rencontre du tissage berbère et de la maroquinerie fine.</p>
+            <span class="slide-price">1 350,00 dh</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-art"><img src="assets/p7-gilet-laine-tissee.jpg" alt="Gilet en laine tissée à col brodé"></div>
+          <div class="slide-info">
+            <div class="eyebrow">Gilet artisanal</div>
+            <h3>Gilet en laine tissée</h3>
+            <p>Gilet sans manches en laine tissée à la main, col cranté habillé d'un galon berbère aux motifs géométriques et ceinture assortie. Coupe fluide, à porter ouvert ou noué.</p>
+            <span class="slide-price">1 300,00 dh</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-art"><img src="assets/p10-babouches-zellige.jpg" alt="Babouches dorées motif zellige"></div>
+          <div class="slide-info">
+            <div class="eyebrow">Babouches de fête</div>
+            <h3>Babouches Zellige</h3>
+            <p>Mules dorées brodées d'un motif zellige tissé fil or et ivoire. Une pièce d'exception pour sublimer une tenue de soirée.</p>
+            <span class="slide-price">450,00 dh</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="car-btn" id="prevBtn" aria-label="Précédent">&#8592;</button>
+      <div class="dots" id="dots"></div>
+      <button class="car-btn" id="nextBtn" aria-label="Suivant">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- =============== GALERIE =============== -->
+<section class="gallery-section" id="galerie">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center;"><svg class="star" viewBox="0 0 20 20" fill="var(--gold)"><path d="M10 1 L12 8 L19 8 L13 12 L15 19 L10 14 L5 19 L7 12 L1 8 L8 8 Z"/></svg>La galerie</div>
+      <h2>La collection, une pièce par famille</h2>
+      <p>Photo, type d'article, description et prix — le meilleur représentant de chaque famille d'articles WISART.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p1-sac-birkin-regard.jpg" alt="Sac Birkin brodé motif Regard"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac artisanal peint main</span>
+          <h3>Sac « Regard »</h3>
+          <p>Silhouette façon Birkin brodée à la main d'un visage aux grands yeux, style art populaire marocain. Anses et rabat en cuir noir, quincaillerie argentée.</p>
+          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p2-sac-cabas-velours-mouton.jpg" alt="Sac cabas en velours bordé de mouton"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac cabas</span>
+          <h3>Cabas velours &amp; mouton</h3>
+          <p>Cabas en velours bordeaux bordé de laine mouton bouclée blanche, orné d'un pompon de perles artisanales. Format compact du quotidien.</p>
+          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p3-sac-bowling-brodee.jpg" alt="Sac bowling en toile brodée"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling toile brodée</h3>
+          <p>Sac bowling en toile tissée brodée de croix berbères, anses en cuir bleu contrastant et fermeture zippée. Une pièce colorée et estivale.</p>
+          <div class="card-foot"><span class="stamp">1 800,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p4-sac-kelly-tisse.jpg" alt="Sac Kelly tissé motif losange"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Kelly</span>
+          <h3>Kelly diamant</h3>
+          <p>Silhouette Kelly en tissage bouclé à motif losange, rabat et poignée en cuir cognac, fermoir métallique argenté.</p>
+          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac de voyage</span>
+          <h3>Kilim à franges</h3>
+          <p>Grand sac habillé d'un tissage kilim rouge et noir aux motifs berbères, franges nouées main et clous métalliques. Base cuir renforcée.</p>
+          <div class="card-foot"><span class="stamp">2 800,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p6-pochette-tissee.jpg" alt="Pochette tissée avec chaînette"></div>
+        <div class="card-body">
+          <span class="card-tag">Pochette</span>
+          <h3>Pochette tissée mini</h3>
+          <p>Petite pochette tissée main aux motifs géométriques rouge et noir, chaînette amovible pour un port en bandoulière. Idéale pour une soirée.</p>
+          <div class="card-foot"><span class="stamp">650,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p7-gilet-laine-tissee.jpg" alt="Gilet en laine tissée à col brodé"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet en laine tissée</h3>
+          <p>Gilet sans manches en laine tissée, col cranté habillé d'un galon berbère aux motifs géométriques et ceinture assortie.</p>
+          <div class="card-foot"><span class="stamp">1 300,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p8-mules-bouclee.jpg" alt="Mules en cuir et laine bouclée"></div>
+        <div class="card-body">
+          <span class="card-tag">Mules</span>
+          <h3>Mules laine bouclée</h3>
+          <p>Mules en cuir souple à l'empeigne en laine bouclée brodée d'un motif berbère. Semelle confortable, chaque paire est unique.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p9-boots-fourrure.jpg" alt="Bottines en cuir et fourrure"></div>
+        <div class="card-body">
+          <span class="card-tag">Bottines</span>
+          <h3>Bottines fourrure &amp; cuir</h3>
+          <p>Bottines en cuir véritable à revers en laine bouclée brodée et bordure fourrure naturelle, fermeture zippée. Caractère et confort pour la saison froide.</p>
+          <div class="card-foot"><span class="stamp">880,00 dh</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><img src="assets/p10-babouches-zellige.jpg" alt="Babouches dorées motif zellige"></div>
+        <div class="card-body">
+          <span class="card-tag">Babouches</span>
+          <h3>Babouches Zellige</h3>
+          <p>Mules dorées brodées d'un motif zellige tissé fil or et ivoire. Une pièce d'exception pour une tenue de fête.</p>
+          <div class="card-foot"><span class="stamp">450,00 dh</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo">
+        <img src="assets/logo.png" alt="WISART Artisanat">
+        <div class="tag">L'artisanat marocain, tissé à la main, réinventé avec caractère.</div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Maison</h5>
+          <a href="#marque">Notre histoire</a>
+          <a href="#galerie">La galerie</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <p>Auto Entrepreneur : Wissam Talii</p>
+          <a href="mailto:Wissamtalii@gmail.com">Wissamtalii@gmail.com</a>
+          <a href="tel:+212614366002">0614 366 002</a>
+        </div>
+        <div class="foot-col">
+          <h5>Adresse</h5>
+          <p>102, Boulevard Oum Rabii<br>Oulfa, Casablanca</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 WISART Artisanat</span>
+      <span>Chaque pièce, une histoire tissée à la main</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const track = document.getElementById('track');
+    const slides = Array.from(track.children);
+    const dotsWrap = document.getElementById('dots');
+    let index = 0, timer;
+
+    slides.forEach((_, i)=>{
+      const d = document.createElement('button');
+      d.className = 'dot' + (i===0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Aller à la diapositive ' + (i+1));
+      d.addEventListener('click', ()=> goTo(i));
+      dotsWrap.appendChild(d);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function render(){
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d,i)=> d.classList.toggle('active', i===index));
+    }
+    function goTo(i){ index = (i + slides.length) % slides.length; render(); restart(); }
+    function next(){ goTo(index+1); }
+    function prev(){ goTo(index-1); }
+    function restart(){ clearInterval(timer); timer = setInterval(next, 4200); }
+
+    document.getElementById('nextBtn').addEventListener('click', next);
+    document.getElementById('prevBtn').addEventListener('click', prev);
+
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', ()=> clearInterval(timer));
+    carousel.addEventListener('mouseleave', restart);
+
+    render();
+    restart();
+  })();
+</script>
+</body>
+</html>
