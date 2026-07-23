@@ -37,7 +37,6 @@
   }
   .eyebrow .star{width:10px;height:10px;flex:none;}
 
-  /* ---------- header ---------- */
   header{
     position:sticky; top:0; z-index:50; background:rgba(244,235,216,0.94);
     backdrop-filter: blur(6px); border-bottom:1px solid var(--line);
@@ -59,7 +58,6 @@
   .btn-ghost{ background:transparent; color:var(--ink);}
   .btn-ghost:hover{ transform:translateY(-2px); background:var(--ink); color:var(--paper);}
 
-  /* ---------- hero ---------- */
   .hero{
     position:relative; padding:70px 28px 100px; text-align:center; overflow:hidden;
     background:
@@ -75,12 +73,10 @@
   .hero-desc{ max-width:620px; margin:26px auto 0; font-size:1.02rem; color:#4a4034;}
   .cta-row{ margin-top:34px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
 
-  /* ---------- section shells ---------- */
   section{ padding:80px 0; }
   .section-head{ text-align:center; max-width:640px; margin:0 auto 48px;}
   .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); margin-top:14px;}
 
-  /* ---------- marque ---------- */
   .brand{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .brand-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center; }
   .brand-grid h2{ font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:20px;}
@@ -89,7 +85,6 @@
   .brand-photo img{ width:100%; height:100%; object-fit:cover; }
   @media(max-width:860px){ .brand-grid{grid-template-columns:1fr;} .brand-photo{order:-1; aspect-ratio:16/9;} }
 
-  /* ---------- carrousel ---------- */
   .carousel-section{ background:var(--ink); color:var(--paper); overflow:hidden;}
   .carousel-section .section-head h2{color:var(--paper);}
   .carousel-section .section-head p{color:#d8cdb6;}
@@ -97,7 +92,7 @@
   .track-viewport{ overflow:hidden; border-radius:6px; box-shadow:var(--shadow);}
   .track{ display:flex; transition:transform .7s cubic-bezier(.65,0,.35,1);}
   .slide{ min-width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; background:var(--paper); color:var(--ink);}
-  .slide-art{ background:var(--sand-deep); aspect-ratio:auto; }
+  .slide-art{ background:var(--sand-deep); }
   .slide-art img{ width:100%; height:100%; object-fit:cover; }
   .slide-info{ padding:48px 56px; display:flex; flex-direction:column; justify-content:center;}
   .slide-info .eyebrow{color:var(--clay-deep);}
@@ -117,8 +112,12 @@
   .dot{ width:8px; height:8px; border-radius:50%; background:rgba(251,246,234,.35); cursor:pointer; border:none; padding:0;}
   .dot.active{ background:var(--gold); width:22px; border-radius:4px; transition:.3s;}
 
-  /* ---------- galerie ---------- */
   .gallery-section .section-head p{color:#5a4f40;}
+  .cat-title{
+    font-size:1.4rem; margin:0 0 20px; padding-top:8px; display:flex; align-items:baseline; gap:10px;
+  }
+  .gallery-section .cat-title:not(:first-of-type){ margin-top:56px; }
+  .cat-count{ font-family:'Cairo',sans-serif; font-size:.78rem; font-weight:600; color:#8a7a61; }
   .gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; }
   @media(max-width:900px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
   @media(max-width:600px){ .gallery-grid{grid-template-columns:1fr;} }
@@ -131,18 +130,17 @@
   .card-art{ aspect-ratio:4/3; overflow:hidden; background:var(--sand-deep);}
   .card-art img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease;}
   .card:hover .card-art img{ transform:scale(1.05); }
-  .card-body{ padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1;}
-  .card-tag{ font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700;}
-  .card-body h3{ font-family:'Amiri',serif; font-size:1.2rem; font-weight:700;}
-  .card-body p{ font-size:.88rem; color:#5a4f40; margin:0; flex:1;}
-  .card-foot{ display:flex; align-items:center; justify-content:flex-end; margin-top:8px;}
+  .card-body{ padding:18px 20px 22px; display:flex; flex-direction:column; gap:7px; flex:1;}
+  .card-tag{ font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--teal); font-weight:700;}
+  .card-body h3{ font-family:'Amiri',serif; font-size:1.12rem; font-weight:700;}
+  .card-body p{ font-size:.85rem; color:#5a4f40; margin:0; flex:1;}
+  .card-foot{ display:flex; align-items:center; justify-content:flex-end; margin-top:6px;}
   .stamp{
-    font-family:'Cairo',sans-serif; font-weight:800; font-size:.95rem; color:var(--paper);
-    background:var(--henna); padding:7px 14px; border-radius:2px; transform:rotate(-2deg);
+    font-family:'Cairo',sans-serif; font-weight:800; font-size:.92rem; color:var(--paper);
+    background:var(--henna); padding:6px 13px; border-radius:2px; transform:rotate(-2deg);
     box-shadow:2px 2px 0 rgba(36,28,21,.18);
   }
 
-  /* ---------- footer ---------- */
   footer{ background:var(--ink); color:#cfc3a9; padding:56px 0 30px;}
   .foot-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px; padding-bottom:36px; border-bottom:1px solid rgba(251,246,234,.14);}
   .foot-logo{ display:flex; align-items:center; gap:14px;}
@@ -161,7 +159,6 @@
 </head>
 <body>
 
-<!-- =============== HEADER =============== -->
 <header>
   <div class="nav">
     <a class="logo" href="#top"><img src="assets/logo.png" alt="WISART Artisanat"></a>
@@ -175,7 +172,6 @@
   </div>
 </header>
 
-<!-- =============== HERO =============== -->
 <section class="hero" id="top">
   <img class="hero-mark" src="assets/logo.png" alt="WISART Artisanat">
   <p class="slogan">« L'artisanat marocain, tissé à la main, réinventé avec caractère »</p>
@@ -186,7 +182,6 @@
   </div>
 </section>
 
-<!-- =============== DESCRIPTION DE LA MARQUE =============== -->
 <section class="brand" id="marque">
   <div class="wrap brand-grid">
     <div>
@@ -196,17 +191,16 @@
       <p>Sacs façon Birkin ou Kelly habillés de tissus tissés à la main, gilets en laine bordés de galons brodés, mules et bottines en cuir garnies de laine bouclée : chaque article est confectionné à la main, à Casablanca, en petite série.</p>
     </div>
     <div class="brand-photo">
-      <img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges WISART">
+      <img src="assets/img-027.jpg" alt="Grand sac tissé kilim à franges WISART">
     </div>
   </div>
 </section>
 
-<!-- =============== CARROUSEL : MEILLEURS ARTICLES =============== -->
 <section class="carousel-section" id="vedettes">
   <div class="wrap section-head">
     <div class="eyebrow" style="justify-content:center;color:var(--gold);"><svg class="star" viewBox="0 0 20 20" fill="var(--gold)"><path d="M10 1 L12 8 L19 8 L13 12 L15 19 L10 14 L5 19 L7 12 L1 8 L8 8 Z"/></svg>La sélection du moment</div>
     <h2>Nos pièces phares</h2>
-    <p>Un aperçu de nos meilleures pièces, une par famille d'articles — le carrousel défile automatiquement.</p>
+    <p>Un aperçu de nos meilleures pièces — le carrousel défile automatiquement.</p>
   </div>
 
   <div class="carousel">
@@ -214,47 +208,47 @@
       <div class="track" id="track">
 
         <div class="slide">
-          <div class="slide-art"><img src="assets/p1-sac-birkin-regard.jpg" alt="Sac Birkin brodé motif Regard"></div>
+          <div class="slide-art"><img src="assets/img-029.jpg" alt="Sac Birkin brodé motif Regard"></div>
           <div class="slide-info">
             <div class="eyebrow">Sac artisanal peint main</div>
             <h3>Sac « Regard »</h3>
-            <p>Silhouette façon Birkin entièrement brodée à la main d'un visage aux grands yeux dans l'esprit de l'art populaire marocain. Anses et rabat en cuir noir, fermoir métal argenté.</p>
+            <p>Silhouette façon Birkin entièrement brodée à la main d'un visage aux grands yeux dans l'esprit de l'art populaire marocain. Anses et rabat en cuir noir.</p>
             <span class="slide-price">1 350,00 dh</span>
           </div>
         </div>
 
         <div class="slide">
-          <div class="slide-art"><img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges"></div>
+          <div class="slide-art"><img src="assets/img-027.jpg" alt="Grand sac tissé kilim à franges"></div>
           <div class="slide-info">
             <div class="eyebrow">Sac de voyage tissé</div>
             <h3>Grand sac kilim à franges</h3>
-            <p>Un authentique tissage kilim rouge et noir aux motifs berbères habille ce grand sac à base cuir, franges nouées main et clous métalliques. Pièce imposante et unique.</p>
+            <p>Un authentique tissage kilim rouge et noir aux motifs berbères habille ce grand sac à base cuir, franges nouées main et clous métalliques.</p>
             <span class="slide-price">2 800,00 dh</span>
           </div>
         </div>
 
         <div class="slide">
-          <div class="slide-art"><img src="assets/p4-sac-kelly-tisse.jpg" alt="Sac Kelly tissé motif losange"></div>
+          <div class="slide-art"><img src="assets/img-023.jpg" alt="Sac Kelly tissé motif losange"></div>
           <div class="slide-info">
             <div class="eyebrow">Sac Kelly tissé</div>
             <h3>Sac Kelly diamant</h3>
-            <p>Silhouette Kelly en tissage bouclé à motif losange, rabat et poignée en cuir cognac, fermoir métallique. La rencontre du tissage berbère et de la maroquinerie fine.</p>
-            <span class="slide-price">1 350,00 dh</span>
+            <p>Silhouette Kelly en tissage bouclé à motif losange, poignée en cuir cognac. La rencontre du tissage berbère et de la maroquinerie fine.</p>
+            <span class="slide-price">1 000,00 dh</span>
           </div>
         </div>
 
         <div class="slide">
-          <div class="slide-art"><img src="assets/p7-gilet-laine-tissee.jpg" alt="Gilet en laine tissée à col brodé"></div>
+          <div class="slide-art"><img src="assets/img-011.jpg" alt="Gilet en laine tissée à col brodé"></div>
           <div class="slide-info">
             <div class="eyebrow">Gilet artisanal</div>
-            <h3>Gilet en laine tissée</h3>
-            <p>Gilet sans manches en laine tissée à la main, col cranté habillé d'un galon berbère aux motifs géométriques et ceinture assortie. Coupe fluide, à porter ouvert ou noué.</p>
+            <h3>Gilet terracotta, col fleuri</h3>
+            <p>Gilet sans manches en laine, large col brodé d'un motif floral rose et crème, ceinture à pompons assortie.</p>
             <span class="slide-price">1 300,00 dh</span>
           </div>
         </div>
 
         <div class="slide">
-          <div class="slide-art"><img src="assets/p10-babouches-zellige.jpg" alt="Babouches dorées motif zellige"></div>
+          <div class="slide-art"><img src="assets/img-036.jpg" alt="Babouches dorées motif zellige"></div>
           <div class="slide-info">
             <div class="eyebrow">Babouches de fête</div>
             <h3>Babouches Zellige</h3>
@@ -274,122 +268,390 @@
   </div>
 </section>
 
-<!-- =============== GALERIE =============== -->
 <section class="gallery-section" id="galerie">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center;"><svg class="star" viewBox="0 0 20 20" fill="var(--gold)"><path d="M10 1 L12 8 L19 8 L13 12 L15 19 L10 14 L5 19 L7 12 L1 8 L8 8 Z"/></svg>La galerie</div>
-      <h2>La collection, une pièce par famille</h2>
-      <p>Photo, type d'article, description et prix — le meilleur représentant de chaque famille d'articles WISART.</p>
+      <h2>Toute la collection — 40 articles</h2>
+      <p>Photo, type d'article, description et prix pour chaque pièce de la collection WISART.</p>
     </div>
 
+    <h3 class="cat-title">Sacs &amp; pochettes <span class="cat-count">(24 articles)</span></h3>
     <div class="gallery-grid">
-
       <div class="card">
-        <div class="card-art"><img src="assets/p1-sac-birkin-regard.jpg" alt="Sac Birkin brodé motif Regard"></div>
-        <div class="card-body">
-          <span class="card-tag">Sac artisanal peint main</span>
-          <h3>Sac « Regard »</h3>
-          <p>Silhouette façon Birkin brodée à la main d'un visage aux grands yeux, style art populaire marocain. Anses et rabat en cuir noir, quincaillerie argentée.</p>
-          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-art"><img src="assets/p2-sac-cabas-velours-mouton.jpg" alt="Sac cabas en velours bordé de mouton"></div>
+        <div class="card-art"><img src="assets/img-000.jpg" alt="Cabas jaune tissé" loading="lazy"></div>
         <div class="card-body">
           <span class="card-tag">Sac cabas</span>
-          <h3>Cabas velours &amp; mouton</h3>
-          <p>Cabas en velours bordeaux bordé de laine mouton bouclée blanche, orné d'un pompon de perles artisanales. Format compact du quotidien.</p>
-          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
+          <h3>Cabas jaune tissé</h3>
+          <p>Cabas en toile tissée jaune, orné d'une chaîne de perles porte-bonheur façon amulette.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-art"><img src="assets/p3-sac-bowling-brodee.jpg" alt="Sac bowling en toile brodée"></div>
+        <div class="card-art"><img src="assets/img-001.jpg" alt="Birkin diamant crème" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin diamant crème</h3>
+          <p>Sac silhouette Birkin en tissage crème à motif losange, poignée en cuir cognac et fermeture zippée.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-002.jpg" alt="Cabas velours bordeaux" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac cabas</span>
+          <h3>Cabas velours bordeaux</h3>
+          <p>Cabas en velours bordeaux bordé de laine mouton bouclée blanche, orné d'un pendentif de perles.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-003.jpg" alt="Cabas velours camel" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac cabas</span>
+          <h3>Cabas velours camel</h3>
+          <p>Cabas en velours camel bordé de laine mouton bouclée blanche, pendentif de perles turquoise.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-004.jpg" alt="Birkin diamant crème" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin diamant crème</h3>
+          <p>Sac Birkin en tissage crème à motif losange, poignées en cuir tan, fermeture zippée sur le côté.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-005.jpg" alt="Bowling denim brodé" loading="lazy"></div>
         <div class="card-body">
           <span class="card-tag">Sac bowling</span>
-          <h3>Bowling toile brodée</h3>
-          <p>Sac bowling en toile tissée brodée de croix berbères, anses en cuir bleu contrastant et fermeture zippée. Une pièce colorée et estivale.</p>
-          <div class="card-foot"><span class="stamp">1 800,00 dh</span></div>
+          <h3>Bowling denim brodé</h3>
+          <p>Sac bowling en denim brodé de croix berbères pastel, poignées en cuir menthe.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-art"><img src="assets/p4-sac-kelly-tisse.jpg" alt="Sac Kelly tissé motif losange"></div>
+        <div class="card-art"><img src="assets/img-006.jpg" alt="Sac portrait peint main" loading="lazy"></div>
         <div class="card-body">
-          <span class="card-tag">Sac Kelly</span>
-          <h3>Kelly diamant</h3>
-          <p>Silhouette Kelly en tissage bouclé à motif losange, rabat et poignée en cuir cognac, fermoir métallique argenté.</p>
-          <div class="card-foot"><span class="stamp">1 350,00 dh</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-art"><img src="assets/p5-sac-kilim-franges.jpg" alt="Grand sac tissé kilim à franges"></div>
-        <div class="card-body">
-          <span class="card-tag">Sac de voyage</span>
-          <h3>Kilim à franges</h3>
-          <p>Grand sac habillé d'un tissage kilim rouge et noir aux motifs berbères, franges nouées main et clous métalliques. Base cuir renforcée.</p>
-          <div class="card-foot"><span class="stamp">2 800,00 dh</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-art"><img src="assets/p6-pochette-tissee.jpg" alt="Pochette tissée avec chaînette"></div>
-        <div class="card-body">
-          <span class="card-tag">Pochette</span>
-          <h3>Pochette tissée mini</h3>
-          <p>Petite pochette tissée main aux motifs géométriques rouge et noir, chaînette amovible pour un port en bandoulière. Idéale pour une soirée.</p>
-          <div class="card-foot"><span class="stamp">650,00 dh</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-art"><img src="assets/p7-gilet-laine-tissee.jpg" alt="Gilet en laine tissée à col brodé"></div>
-        <div class="card-body">
-          <span class="card-tag">Gilet artisanal</span>
-          <h3>Gilet en laine tissée</h3>
-          <p>Gilet sans manches en laine tissée, col cranté habillé d'un galon berbère aux motifs géométriques et ceinture assortie.</p>
-          <div class="card-foot"><span class="stamp">1 300,00 dh</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-art"><img src="assets/p8-mules-bouclee.jpg" alt="Mules en cuir et laine bouclée"></div>
-        <div class="card-body">
-          <span class="card-tag">Mules</span>
-          <h3>Mules laine bouclée</h3>
-          <p>Mules en cuir souple à l'empeigne en laine bouclée brodée d'un motif berbère. Semelle confortable, chaque paire est unique.</p>
+          <span class="card-tag">Pièce peinte main</span>
+          <h3>Sac portrait peint main</h3>
+          <p>Sac en toile peint à la main d'un portrait dans l'esprit de Frida Kahlo, anse en foulard coloré.</p>
           <div class="card-foot"><span class="stamp">810,00 dh</span></div>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-art"><img src="assets/p9-boots-fourrure.jpg" alt="Bottines en cuir et fourrure"></div>
+        <div class="card-art"><img src="assets/img-007.jpg" alt="Bowling moutarde brodé" loading="lazy"></div>
         <div class="card-body">
-          <span class="card-tag">Bottines</span>
-          <h3>Bottines fourrure &amp; cuir</h3>
-          <p>Bottines en cuir véritable à revers en laine bouclée brodée et bordure fourrure naturelle, fermeture zippée. Caractère et confort pour la saison froide.</p>
-          <div class="card-foot"><span class="stamp">880,00 dh</span></div>
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling moutarde brodé</h3>
+          <p>Sac bowling en toile moutarde brodée de croix berbères, poignées en cuir bleu roi.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-art"><img src="assets/p10-babouches-zellige.jpg" alt="Babouches dorées motif zellige"></div>
+        <div class="card-art"><img src="assets/img-008.jpg" alt="Bowling crème brodé" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling crème brodé</h3>
+          <p>Sac bowling en toile crème brodée de croix, poignées en cuir bleu ciel.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-018.jpg" alt="Birkin cuir et kilim" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin cuir et kilim</h3>
+          <p>Sac façon Birkin en cuir bleu-gris, base habillée d'un tissage kilim rouge et noir à franges.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-019.jpg" alt="Cabas tissé bordeaux" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac tissé</span>
+          <h3>Cabas tissé bordeaux</h3>
+          <p>Cabas tissé bordeaux à franges, motifs tribaux et anse arrondie.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-020.jpg" alt="Cabas tissé à pompons" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac tissé</span>
+          <h3>Cabas tissé à pompons</h3>
+          <p>Cabas tissé crème orné de pompons colorés, base en fourrure blanche.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-021.jpg" alt="Bowling tissé bordeaux" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling tissé bordeaux</h3>
+          <p>Sac bowling en tissage bordeaux à motifs géométriques berbères.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-023.jpg" alt="Kelly tissé diamant" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Kelly</span>
+          <h3>Kelly tissé diamant</h3>
+          <p>Sac silhouette Kelly en tissage bouclé à motif losange, poignée en cuir cognac.</p>
+          <div class="card-foot"><span class="stamp">1000,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-024.jpg" alt="Bowling orange" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling orange</h3>
+          <p>Sac bowling en toile orange tissée, poignée en cuir bleu roi.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-025.jpg" alt="Bowling denim, poignée violette" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac bowling</span>
+          <h3>Bowling denim, poignée violette</h3>
+          <p>Sac bowling en denim brodé, poignée en cuir violet.</p>
+          <div class="card-foot"><span class="stamp">1800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-026.jpg" alt="Mini pochette tissée" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Pochette</span>
+          <h3>Mini pochette tissée</h3>
+          <p>Mini pochette tissée rouge et noir aux motifs géométriques, chaînette amovible.</p>
+          <div class="card-foot"><span class="stamp">650,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-027.jpg" alt="Grand sac kilim à franges" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac de voyage</span>
+          <h3>Grand sac kilim à franges</h3>
+          <p>Grand sac habillé d'un tissage kilim rouge et noir aux motifs berbères, franges nouées main et base cuir renforcée.</p>
+          <div class="card-foot"><span class="stamp">2800,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-028.jpg" alt="Pochette velours orange" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Pochette</span>
+          <h3>Pochette velours orange</h3>
+          <p>Pochette souple en toile de velours orange tissée à motifs.</p>
+          <div class="card-foot"><span class="stamp">1280,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-029.jpg" alt="Birkin « Regard »" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin « Regard »</h3>
+          <p>Sac Birkin brodé à la main d'un visage aux grands yeux façon art populaire marocain, anses en cuir noir.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-032.jpg" alt="Kelly tissé, poignée daim" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Kelly</span>
+          <h3>Kelly tissé, poignée daim</h3>
+          <p>Sac Kelly en tissage bouclé à motif losange, poignée en daim marron.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-033.jpg" alt="Birkin crème, motif losange" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin crème, motif losange</h3>
+          <p>Sac Birkin crème bordé de daim noir, orné d'un grand motif losange multicolore.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-034.jpg" alt="Birkin à franges cloutée" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Birkin</span>
+          <h3>Birkin à franges cloutée</h3>
+          <p>Sac Birkin crème à franges, broderie colorée et clous métalliques.</p>
+          <div class="card-foot"><span class="stamp">1500,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-035.jpg" alt="Kelly tissé, poignée cuir" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sac Kelly</span>
+          <h3>Kelly tissé, poignée cuir</h3>
+          <p>Sac Kelly en tissage bouclé à motif losange, poignée en cuir marron.</p>
+          <div class="card-foot"><span class="stamp">1350,00 dh</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cat-title">Gilets &amp; vestes en laine <span class="cat-count">(9 articles)</span></h3>
+    <div class="gallery-grid">
+      <div class="card">
+        <div class="card-art"><img src="assets/img-009.jpg" alt="Gilet en laine, col diamant" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet en laine, col diamant</h3>
+          <p>Gilet sans manches en laine tricotée verte, col à motif losange coloré et ceinture nouée.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-010.jpg" alt="Gilet en laine, dos ouvert" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet en laine, dos ouvert</h3>
+          <p>Gilet en laine tricotée verte porté ouvert, col contrastant en tissu noir.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-011.jpg" alt="Gilet terracotta, col fleuri" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet terracotta, col fleuri</h3>
+          <p>Gilet en laine terracotta, large col brodé d'un motif floral rose et crème, ceinture à pompons.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-012.jpg" alt="Gilet vert, col motif bleu" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet vert, col motif bleu</h3>
+          <p>Gilet en laine verte, col à motif géométrique bleu clair, ceinture cordon à pompons.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-013.jpg" alt="Cardigan à capuche orange" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Cardigan à capuche orange</h3>
+          <p>Cardigan à capuche en laine orange doublée, fermé par une poche perlée sur le devant.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-014.jpg" alt="Gilet rouille, col tribal" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Gilet rouille, col tribal</h3>
+          <p>Gilet en laine rouille, col bordé d'un galon tissé à motifs tribaux foncés.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-015.jpg" alt="Cardigan rayé, manches marine" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Cardigan rayé, manches marine</h3>
+          <p>Cardigan rayé rouge et blanc, manches en jersey bleu marine, poche à emblème tribal.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-016.jpg" alt="Cardigan bordeaux perlé" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Cardigan bordeaux perlé</h3>
+          <p>Cardigan en laine bordeaux, poche ornée de perles roses scintillantes.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-017.jpg" alt="Robe cardigan rayée" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Gilet artisanal</span>
+          <h3>Robe cardigan rayée</h3>
+          <p>Robe cardigan rayée rouge et blanc, bande centrale tissée bleue et boutons argentés.</p>
+          <div class="card-foot"><span class="stamp">1300,00 dh</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cat-title">Chaussures artisanales <span class="cat-count">(7 articles)</span></h3>
+    <div class="gallery-grid">
+      <div class="card">
+        <div class="card-art"><img src="assets/img-022.jpg" alt="Bottines laine bouclée" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Bottines</span>
+          <h3>Bottines laine bouclée</h3>
+          <p>Bottines en laine bouclée et fourrure blanche, bout brodé d'un motif losange.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-030.jpg" alt="Bottines daim et fourrure" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Bottines</span>
+          <h3>Bottines daim et fourrure</h3>
+          <p>Bottines en daim marron bordées de fourrure blanche.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-031.jpg" alt="Mules laine bouclée" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Mules</span>
+          <h3>Mules laine bouclée</h3>
+          <p>Mules en daim marron, empeigne en laine bouclée brodée d'une croix berbère.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-036.jpg" alt="Babouches dorées zellige" loading="lazy"></div>
         <div class="card-body">
           <span class="card-tag">Babouches</span>
-          <h3>Babouches Zellige</h3>
-          <p>Mules dorées brodées d'un motif zellige tissé fil or et ivoire. Une pièce d'exception pour une tenue de fête.</p>
+          <h3>Babouches dorées zellige</h3>
+          <p>Babouches dorées brodées d'un motif zellige tissé fil or et ivoire.</p>
           <div class="card-foot"><span class="stamp">450,00 dh</span></div>
         </div>
       </div>
-
+      <div class="card">
+        <div class="card-art"><img src="assets/img-037.jpg" alt="Mules et babouches" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Mules</span>
+          <h3>Mules et babouches</h3>
+          <p>Mules en cuir à empeigne en laine bouclée brodée, disponibles fourrées ou non.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-038.jpg" alt="Bottines cuir et laine" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Bottines</span>
+          <h3>Bottines cuir et laine</h3>
+          <p>Bottines en cuir marron, revers en laine bouclée brodée et fourrure naturelle.</p>
+          <div class="card-foot"><span class="stamp">810,00 dh</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-art"><img src="assets/img-039.jpg" alt="Bottines cuir, fermeture zip" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Bottines</span>
+          <h3>Bottines cuir, fermeture zip</h3>
+          <p>Bottines en cuir marron, revers bouclé brodé, fermeture zippée sur le côté.</p>
+          <div class="card-foot"><span class="stamp">880,00 dh</span></div>
+        </div>
+      </div>
     </div>
+
+
   </div>
 </section>
 
-<!-- =============== FOOTER =============== -->
 <footer id="contact">
   <div class="wrap">
     <div class="foot-grid">
