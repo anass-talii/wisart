@@ -86,7 +86,7 @@
   .brand-grid h2{ font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:20px;}
   .brand-grid p{ color:#4a4034; margin:0 0 16px; font-size:1.02rem;}
   .brand-photo{ border-radius:6px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/5; }
-  .brand-photo img{ width:100%; height:100%; object-fit:contain; object-position:center center; }
+  .brand-photo img{ width:100%; height:100%; object-fit:cover; object-position:center center; }
   @media(max-width:860px){ .brand-grid{grid-template-columns:1fr;} .brand-photo{order:-1; aspect-ratio:16/9;} }
 
   .carousel-section{ background:var(--ink); color:var(--paper); overflow:hidden;}
@@ -97,7 +97,7 @@
   .track{ display:flex; transition:transform .7s cubic-bezier(.65,0,.35,1);}
   .slide{ min-width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; background:var(--paper); color:var(--ink); min-height:420px;}
   .slide-art{ background:var(--sand-deep); }
-  .slide-art img{ width:100%; height:100%; object-fit:contain; object-position:center center; display:block; }
+  .slide-art img{ width:100%; height:100%; object-fit:cover; object-position:center center; display:block; }
   .slide-info{ padding:48px 56px; display:flex; flex-direction:column; justify-content:center;}
   .slide-info .eyebrow{color:var(--clay-deep);}
   .slide-info h3{ font-size:clamp(1.4rem,3vw,2rem); margin:14px 0 12px;}
